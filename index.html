@@ -1,0 +1,1284 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BEAUTY CENTER ADRIANA | Salón de Belleza</title>
+
+<style>
+/* COLORES GENERALES: cambia estos códigos para modificar el diseño */
+:root {
+  --rosa: #bd8490;
+  --rosa-claro: #f7e9eb;
+  --vino: #613d47;
+  --dorado: #d0b078;
+  --marfil: #fffaf7;
+  --texto: #45343a;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: var(--marfil);
+  color: var(--texto);
+  line-height: 1.6;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(255,250,247,.97);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid #e5c9cb;
+}
+
+nav {
+  max-width: 1300px;
+  margin: auto;
+  padding: 15px 22px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.brand {
+  color: var(--vino);
+  text-decoration: none;
+  font: bold 21px Georgia, serif;
+  letter-spacing: 1px;
+}
+
+.brand small {
+  display: block;
+  text-align: center;
+  color: var(--dorado);
+  font: 10px Arial, sans-serif;
+  letter-spacing: 4px;
+}
+
+.menu {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.menu a {
+  text-decoration: none;
+  color: var(--vino);
+  padding: 9px 11px;
+  font-size: 12px;
+  border: 1px solid transparent;
+  transition: .3s;
+}
+
+.menu a:hover,
+.menu a[aria-current="page"] {
+  border-color: var(--rosa);
+  color: var(--rosa);
+}
+
+main > section {
+  display: none !important;
+}
+
+main > section.active-page {
+  display: block !important;
+}
+
+/* INICIO CON FOTOGRAFÍA DE FONDO */
+
+#inicio.hero {
+  min-height: 650px;
+  display: flex;
+  align-items: center;
+  padding: 80px 8%;
+  color: white;
+  background:
+    linear-gradient(90deg, rgba(45,22,31,.83), rgba(65,32,43,.35)),
+    url("images (2yu).jpg")
+    center/cover no-repeat;
+}
+
+.hero-content {
+  max-width: 700px;
+}
+
+.eyebrow {
+  color: var(--dorado);
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  font-size: 11px;
+}
+
+.hero h1 {
+  font: normal clamp(42px,6vw,78px) Georgia, serif;
+  line-height: 1.1;
+  margin: 18px 0;
+}
+
+.hero p {
+  max-width: 550px;
+  margin-bottom: 28px;
+  font-size: 17px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 13px 22px;
+  background: var(--vino);
+  color: white;
+  border: 1px solid var(--dorado);
+  text-decoration: none;
+  cursor: pointer;
+  font-size: 12px;
+  transition: .3s;
+}
+
+.btn:hover {
+  background: var(--rosa);
+}
+
+/* FONDOS FOTOGRÁFICOS DE CADA SECCIÓN
+   Para cambiar una foto, reemplaza la URL dentro de url("...").
+   El primer valor rgba(...) controla qué tan clara se ve la foto.
+*/
+
+
+section {
+  padding: 75px 25px;
+}
+
+.section-inner {
+  max-width: 1240px;
+  margin: auto;
+}
+
+#servicios {
+  background:
+    linear-gradient(rgba(255,250,247,.78), rgba(255,250,247,.82)),
+    url("images (1yu).jpg") center/cover no-repeat;
+  background-attachment: fixed;
+}
+
+#promociones {
+  background:
+    lineaimages-gradient(rgba(255,250,247,.78), rgba(255,250,247,.82)),
+    url("images (3yu).jpg") center/cover no-repeat;
+  background-attachment: fixed;
+}
+
+#galeria {
+  background:
+    linear-gradient(rgba(255,250,247,.78), rgba(255,250,247,.82)),
+    url("images (2yu).jpg") center/cover no-repeat;
+  background-attachment: fixed;
+}
+
+#nosotros {
+  background:
+    linear-gradient(rgba(255,250,247,.78), rgba(255,250,247,.82)),
+    url("images (1yu).jpg") center/cover no-repeat;
+  background-attachment: fixed;
+}
+
+#reservas {
+  background:
+    linear-gradient(rgba(255,250,247,.78), rgba(255,250,247,.82)),
+    url("images (3yu).jpg") center/cover no-repeat;
+  background-attachment: fixed;
+}
+
+#contacto {
+  background:
+    linear-gradient(rgba(255,250,247,.78), rgba(255,250,247,.82)),
+    url("images (2yu).jpg") center/cover no-repeat;
+  background-attachment: fixed;
+}
+
+/* TÍTULOS: cambia color, tamaño y tipografía en estas reglas */
+
+.heading {
+  text-align: center;
+  max-width: 760px;
+  margin: 0 auto 38px;
+}
+
+.heading span {
+  color: var(--rosa);
+  font-size: 11px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+}
+
+.heading h2 {
+  color: var(--vino);
+  font: normal clamp(32px,4vw,48px) Georgia, serif;
+  margin: 8px 0;
+}
+
+.heading p {
+  color: #786a6d;
+}
+
+/* SERVICIOS */
+
+.category-nav {
+  display: flex;
+  justify-content: center;
+  gap: 9px;
+  flex-wrap: wrap;
+  margin: 25px 0 38px;
+}
+
+.category-nav a {
+  text-decoration: none;
+  color: var(--vino);
+  background: #fff8f6;
+  border: 1px solid #e5c9cb;
+  padding: 9px 14px;
+  font-size: 12px;
+}
+
+.category-nav a:hover {
+  background: var(--vino);
+  color: white;
+}
+
+.service-category {
+  padding: 25px 0 40px;
+  border-bottom: 1px solid #e5c9cb;
+  scroll-margin-top: 100px;
+}
+
+.category-title {
+  margin-bottom: 22px;
+  padding-left: 15px;
+  border-left: 3px solid var(--dorado);
+}
+
+.category-title h3 {
+  font: normal 30px Georgia, serif;
+  color: var(--vino);
+}
+
+.category-title p {
+  color: #806c72;
+  font-size: 13px;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(4,minmax(0,1fr));
+  gap: 20px;
+}
+
+.service-card {
+  background: rgba(255,255,255,.96);
+  border: 1px solid #ead6d8;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 8px 25px #613d4712;
+  display: flex;
+  flex-direction: column;
+  transition: .3s;
+}
+
+.service-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px #613d4725;
+}
+
+.service-card img {
+  width: 100%;
+  height: 190px;
+  object-fit: cover;
+}
+
+.service-info {
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.service-info h4 {
+  color: var(--vino);
+  margin-bottom: 5px;
+}
+
+.service-info p {
+  font-size: 12px;
+  color: #786a6d;
+  flex: 1;
+}
+
+.card-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  margin-top: 13px;
+  padding-top: 12px;
+  border-top: 1px solid #f0e6e4;
+}
+
+.price {
+  color: var(--rosa);
+  font-weight: bold;
+}
+
+.book-small {
+  background: var(--vino);
+  color: white;
+  border: 1px solid var(--dorado);
+  padding: 8px 10px;
+  cursor: pointer;
+}
+
+.book-small:hover {
+  background: var(--rosa);
+}
+
+.notice {
+  font-size: 12px;
+  color: #806f72;
+  margin-top: 18px;
+}
+
+/* PROMOCIONES */
+
+.promo-grid {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 20px;
+}
+
+.promo-card {
+  padding: 30px 25px;
+  background: rgba(255,255,255,.90);
+  border: 1px solid #e4c9cb;
+  border-radius: 16px;
+  box-shadow: 0 8px 22px #613d4710;
+}
+
+.promo-card .symbol {
+  color: var(--dorado);
+  font-size: 30px;
+}
+
+.promo-card h3 {
+  font: normal 25px Georgia, serif;
+  color: var(--vino);
+  margin: 10px 0;
+}
+
+.promo-card p {
+  color: #786a6d;
+  font-size: 14px;
+}
+
+/* GALERÍA */
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  gap: 14px;
+}
+
+.gallery-grid img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  border: 4px solid white;
+  border-radius: 12px;
+  box-shadow: 0 7px 20px #613d4720;
+  transition: .3s;
+}
+
+.gallery-grid img:hover {
+  transform: scale(1.03);
+}
+
+/* NOSOTROS: aquí se controla la foto, misión, visión y compromiso */
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 45px;
+  align-items: center;
+}
+
+.about-grid > img {
+  width: 100%;
+  height: 440px;
+  object-fit: cover;
+  border-radius: 18px;
+  box-shadow: 0 12px 30px #613d4720;
+}
+
+.about-copy h2 {
+  font: normal 38px Georgia, serif;
+  color: var(--vino);
+  margin: 10px 0;
+}
+
+.about-copy p {
+  margin: 12px 0;
+  color: #716165;
+}
+
+.values {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 10px;
+  margin-top: 22px;
+}
+
+.value {
+  padding: 16px 10px;
+  background: rgba(255,255,255,.90);
+  border: 1px solid #e5cfd0;
+  border-radius: 12px;
+  text-align: center;
+}
+
+.value strong {
+  display: block;
+  font: normal 17px Georgia, serif;
+  color: var(--vino);
+}
+
+/* RESERVAS */
+
+.booking-wrap {
+  max-width: 850px;
+  margin: auto;
+  padding: 32px;
+  background: rgba(255,255,255,.97);
+  border: 1px solid #e4ccce;
+  border-radius: 18px;
+  box-shadow: 0 12px 35px #613d4715;
+}
+
+form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 17px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.field.full {
+  grid-column: 1 / -1;
+}
+
+label {
+  color: var(--vino);
+  font-size: 12px;
+  font-weight: bold;
+}
+
+input, select, textarea {
+  width: 100%;
+  padding: 13px;
+  border: 1px solid #e2cecc;
+  background: #fffaf7;
+  color: var(--texto);
+  font: 14px Arial, sans-serif;
+}
+
+textarea {
+  min-height: 95px;
+}
+
+/* CONTACTO */
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 15px;
+}
+
+.contact-item {
+  padding: 25px 20px;
+  text-align: center;
+  background: rgba(255,255,255,.88);
+  border: 1px solid #ead6d8;
+  border-radius: 12px;
+}
+
+.contact-item b {
+  display: block;
+  color: var(--vino);
+  font: normal 22px Georgia, serif;
+  margin-bottom: 8px;
+}
+
+footer {
+  background: #493238;
+  color: #f9efed;
+  text-align: center;
+  padding: 32px 15px;
+  font-size: 13px;
+}
+
+footer strong {
+  display: block;
+  font: normal 22px Georgia, serif;
+  margin-bottom: 5px;
+}
+
+/* DISEÑO PARA CELULARES */
+
+@media(max-width:950px) {
+  .cards {
+    grid-template-columns: repeat(3,minmax(0,1fr));
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(3,1fr);
+  }
+}
+
+@media(max-width:650px) {
+  nav {
+    justify-content: center;
+  }
+
+  .brand {
+    width: 100%;
+    text-align: center;
+  }
+
+  .menu {
+    justify-content: center;
+  }
+
+  .menu a {
+    font-size: 10px;
+    padding: 7px;
+  }
+
+  .hero {
+    min-height: 500px;
+    padding: 55px 22px;
+    text-align: center;
+  }
+
+  section {
+    padding: 50px 15px;
+  }
+
+  #servicios,
+  #promociones,
+  #galeria,
+  #nosotros,
+  #reservas,
+  #contacto {
+    background-attachment: scroll;
+    background-position: center;
+  }
+
+  .cards {
+    grid-template-columns: repeat(2,minmax(0,1fr));
+    gap: 12px;
+  }
+
+  .service-card img {
+    height: 135px;
+  }
+
+  .service-info {
+    padding: 10px;
+  }
+
+  .service-info h4 {
+    font-size: 13px;
+  }
+
+  .service-info p {
+    font-size: 11px;
+  }
+
+  .price {
+    font-size: 14px;
+  }
+
+  .book-small {
+    padding: 7px;
+    font-size: 10px;
+  }
+
+  .promo-grid,
+  .about-grid,
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(2,1fr);
+    gap: 9px;
+  }
+
+  .gallery-grid img {
+    height: 165px;
+  }
+
+  .about-grid > img {
+    height: 300px;
+  }
+
+  .values {
+    grid-template-columns: 1fr;
+  }
+
+  form {
+    grid-template-columns: 1fr;
+  }
+
+  .field.full {
+    grid-column: auto;
+  }
+
+  .booking-wrap {
+    padding: 20px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<nav>
+  <a class="brand" href="#inicio" data-page="inicio">
+    BEAUTY CENTER ADRIANA
+    <small>SALÓN DE BELLEZA</small>
+  </a>
+
+  <div class="menu">
+    <a href="#inicio" data-page="inicio">Inicio</a>
+    <a href="#servicios" data-page="servicios">Servicios</a>
+    <a href="#promociones" data-page="promociones">Promociones</a>
+    <a href="#galeria" data-page="galeria">Galería</a>
+    <a href="#nosotros" data-page="nosotros">Nosotros</a>
+    <a href="#reservas" data-page="reservas">Reservas</a>
+    <a href="#contacto" data-page="contacto">Contacto</a>
+  </div>
+</nav>
+</header>
+
+<main>
+
+<section class="hero" id="inicio">
+  <div class="hero-content">
+    <div class="eyebrow">Belleza · Estilo · Cuidado personal</div>
+    <h1>BEAUTY CENTER ADRIANA</h1>
+    <p>
+      Realza tu estilo y disfruta de una atención personalizada.
+      Conoce nuestros servicios, consulta precios y solicita tu reserva.
+    </p>
+    <a class="btn" href="#servicios" data-page="servicios">
+      EXPLORAR SERVICIOS
+    </a>
+  </div>
+</section>
+
+<section id="servicios">
+  <div class="section-inner">
+    <div class="heading">
+      <span>Tu estilo, a tu manera</span>
+      <h2>Nuestros servicios</h2>
+      <p>
+        Descubre nuestros servicios de belleza, consulta sus precios
+        y elige la opción que mejor se adapte a ti.
+      </p>
+    </div>
+    <div class="category-nav" id="categoryNav"></div>
+    <div id="serviceCatalog"></div>
+    <p class="notice">
+      Los precios están expresados en bolivianos (Bs) y son referenciales.
+      Pueden variar según el largo del cabello, los materiales y el trabajo requerido.
+    </p>
+  </div>
+</section>
+
+<section id="promociones">
+  <div class="section-inner">
+    <div class="heading">
+      <span>Especial para ti</span>
+      <h2>Promociones</h2>
+      <p>Consulta la disponibilidad y vigencia de las ofertas al realizar tu reserva.</p>
+    </div>
+
+    <div class="promo-grid">
+      <article class="promo-card">
+        <div class="symbol">✦</div>
+        <h3>¡Por hoy, 20% de descuento!</h3>
+        <p>Aprovecha un 20% de descuento en servicios seleccionados de BEAUTY CENTER ADRIANA. Promoción válida solamente durante el día de hoy: <strong id="promoTodayDate"></strong>.</p>
+      </article>
+
+      <article class="promo-card">
+        <div class="symbol">♡</div>
+        <h3>Manos y pies</h3>
+        <p>Consulta por una oferta especial al combinar manicure y pedicure.</p>
+      </article>
+
+      <article class="promo-card">
+        <div class="symbol">✧</div>
+        <h3>Peinado y maquillaje</h3>
+        <p>Pregunta por nuestros paquetes para ocasiones especiales y reserva con anticipación.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="galeria">
+  <div class="section-inner">
+    <div class="heading">
+      <span>Inspiración</span>
+      <h2>Nuestra galería</h2>
+      <p>Ideas de belleza y estilos que puedes consultar con nuestro equipo.</p>
+    </div>
+    <div class="gallery-grid" id="galleryGrid"></div>
+  </div>
+</section>
+
+<section id="nosotros">
+  <div class="section-inner about-grid">
+    <img
+      src="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1000&q=85"
+      alt="Interior de un salón de belleza">
+
+    <div class="about-copy">
+      <span class="eyebrow">Conócenos</span>
+      <h2>BEAUTY CENTER ADRIANA</h2>
+
+      <p>
+        Somos un salón de belleza ubicado en la ciudad de Oruro,
+        en las calles Belzu y La Paz. Brindamos servicios de cuidado
+        personal y asesoramiento de estilo en un ambiente pensado
+        para la comodidad de nuestros clientes.
+      </p>
+
+      <p>
+        Nuestro propósito es ofrecer una atención amable, escuchar
+        las preferencias de cada persona y ayudarle a elegir el servicio
+        que responda a sus necesidades.
+      </p>
+
+      <div class="values">
+        <!-- EDITAR AQUÍ: texto de MISIÓN -->
+        <div class="value">
+          <strong>Misión</strong>
+          <small>Brindar cuidado y atención personalizada.</small>
+        </div>
+        <!-- EDITAR AQUÍ: texto de VISIÓN -->
+        <div class="value">
+          <strong>Visión</strong>
+          <small>Ser reconocidos por nuestro servicio y dedicación.</small>
+        </div>
+        <!-- EDITAR AQUÍ: texto de COMPROMISO -->
+        <div class="value">
+          <strong>Compromiso</strong>
+          <small>Calidad, respeto y responsabilidad.</small>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="reservas">
+  <div class="section-inner">
+    <div class="heading">
+      <span>Agenda tu visita</span>
+      <h2>Reserva tu cita</h2>
+      <p>Completa los datos para preparar una solicitud de reserva.</p>
+    </div>
+
+    <div class="booking-wrap">
+      <form id="bookingForm">
+        <div class="field">
+          <label for="clientName">Nombre completo</label>
+          <input id="clientName" required placeholder="Tu nombre">
+        </div>
+
+        <div class="field">
+          <label for="clientPhone">Teléfono de contacto</label>
+          <input id="clientPhone" type="tel" required placeholder="Tu número">
+        </div>
+
+        <div class="field">
+          <label for="serviceSelect">Servicio</label>
+          <select id="serviceSelect" required>
+            <option value="">Selecciona un servicio</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="date">Fecha solicitada</label>
+          <input id="date" type="date" required>
+        </div>
+
+        <div class="field">
+          <label for="time">Hora preferida</label>
+          <select id="time" required>
+            <option value="">Selecciona una hora</option>
+            <option>09:00</option>
+            <option>10:00</option>
+            <option>11:00</option>
+            <option>12:00</option>
+            <option>13:00</option>
+            <option>14:00</option>
+            <option>15:00</option>
+            <option>16:00</option>
+            <option>17:00</option>
+            <option>18:00</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="extra">Observaciones (opcional)</label>
+          <input id="extra" placeholder="Detalles de tu solicitud">
+        </div>
+
+        <div class="field full">
+          <button class="btn" type="submit">PREPARAR SOLICITUD</button>
+        </div>
+      </form>
+
+      <p class="notice">
+        Horario de atención: de 09:00 a 18:00. Envía tu solicitud por WhatsApp.
+        La cita quedará confirmada cuando el salón te responda si el horario está libre.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section id="contacto">
+  <div class="section-inner">
+    <div class="heading">
+      <span>Estamos para atenderte</span>
+      <h2>Contacto y ubicación</h2>
+      <p>Comunícate para consultar disponibilidad, servicios y promociones.</p>
+    </div>
+
+    <div class="contact-grid">
+      <div class="contact-item">
+        <b>Ubicación</b>
+        <span>Calles Belzu y La Paz<br>Oruro, Bolivia</span>
+      </div>
+      <div class="contact-item">
+        <b>Reservas por WhatsApp</b>
+        <span>Escríbenos directamente para consultar servicios y reservas.</span><br>
+        <!-- El número queda en el enlace, no se muestra en pantalla. -->
+        <a class="btn" style="margin-top:12px" href="https://wa.me/59162791372" target="_blank" rel="noopener">ESCRIBIR POR WHATSAPP</a>
+      </div>
+      <div class="contact-item">
+        <b>Horario de atención</b>
+        <span>Lunes a sábado, de 09:00 a 18:00.</span><br>
+        <small>La disponibilidad se confirma por WhatsApp.</small>
+      </div>
+    </div>
+
+    <div style="margin:25px auto 0;max-width:900px">
+      <iframe
+        title="Mapa de Oruro, Bolivia"
+        src="https://www.google.com/maps?q=Belzu%20y%20La%20Paz%2C%20Oruro%2C%20Bolivia&output=embed"
+        width="100%"
+        height="300"
+        style="border:0"
+        loading="lazy">
+      </iframe>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <strong>BEAUTY CENTER ADRIANA</strong>
+  <span>Oruro, Bolivia · Belleza y cuidado personal</span>
+  <br>
+  <span>© <span id="year"></span> Todos los derechos reservados.</span>
+</footer>
+
+<script>
+const categories = [
+  {
+    id:"cortes", name:"Cortes", desc:"Opciones de corte y acabado",
+    items:[
+      ["Corte clásico","Corte tradicional adaptado al estilo personal.",35],
+      ["Corte en capas","Capas para dar movimiento al cabello.",45],
+      ["Corte bob","Estilo bob con acabado personalizado.",50],
+      ["Corte pixie","Corte corto de estilo moderno.",45],
+      ["Corte recto","Corte uniforme y definido.",35],
+      ["Corte en V","Acabado en forma de V.",40],
+      ["Flequillo","Diseño o retoque de flequillo.",20],
+      ["Corte y lavado","Corte acompañado de lavado.",50]
+    ]
+  },
+  {
+    id:"tintes", name:"Tintes", desc:"Coloración y cambios de tono",
+    items:[
+      ["Tinte completo","Coloración completa; precio base.",180],
+      ["Retoque de raíces","Aplicación en crecimiento de raíz.",100],
+      ["Baño de color","Realce del tono y brillo.",120],
+      ["Mechas clásicas","Iluminación en secciones.",220],
+      ["Balayage","Efecto degradado personalizado.",350],
+      ["Reflejos","Reflejos para dar dimensión.",200],
+      ["Matizado","Ajuste de reflejos no deseados.",90],
+      ["Decoloración","Aclarado; requiere evaluación previa.",250]
+    ]
+  },
+  {
+    id:"peinados", name:"Peinados", desc:"Peinados para ocasiones especiales",
+    items:[
+      ["Peinado sencillo","Acabado natural para el día a día.",45],
+      ["Ondas suaves","Ondas con acabado ligero.",60],
+      ["Ondas definidas","Ondas marcadas y duraderas.",75],
+      ["Recogido clásico","Recogido elegante.",100],
+      ["Moño elegante","Moño para eventos especiales.",120],
+      ["Trenza sencilla","Trenza tradicional.",40],
+      ["Trenzas elaboradas","Diseño de trenzas personalizado.",80],
+      ["Peinado de fiesta","Peinado para celebraciones.",130]
+    ]
+  },
+  {
+    id:"manicure", name:"Manicure", desc:"Cuidado de las uñas de las manos",
+    items:[
+      ["Manicure básica","Limpieza, forma y cuidado.",35],
+      ["Manicure con esmalte","Manicure con esmalte tradicional.",45],
+      ["Esmaltado semipermanente","Color con acabado semipermanente.",80],
+      ["Uñas acrílicas","Aplicación de uñas acrílicas.",150],
+      ["Uñas en gel","Aplicación de gel.",140],
+      ["Retiro de esmalte","Retiro y cuidado básico.",25],
+      ["Diseño sencillo","Decoración sencilla por uñas.",15],
+      ["Manicure spa","Cuidado y humectación adicional.",65]
+    ]
+  },
+  {
+    id:"pedicure", name:"Pedicure", desc:"Cuidado de los pies y uñas",
+    items:[
+      ["Pedicure básica","Limpieza y cuidado de uñas.",45],
+      ["Pedicure con esmalte","Pedicure con esmalte tradicional.",55],
+      ["Pedicure semipermanente","Acabado semipermanente.",90],
+      ["Pedicure spa","Cuidado e hidratación.",80],
+      ["Tratamiento de durezas","Cuidado cosmético de durezas.",60],
+      ["Cuidado de uñas","Limpieza y forma de uñas.",35],
+      ["Pedicure francesa","Acabado estilo francés.",65],
+      ["Pedicure completa","Cuidado, exfoliación y esmalte.",100]
+    ]
+  },
+  {
+    id:"maquillaje", name:"Maquillaje", desc:"Maquillaje social y para eventos",
+    items:[
+      ["Maquillaje natural","Acabado ligero para el día.",100],
+      ["Maquillaje de día","Estilo fresco y definido.",120],
+      ["Maquillaje de noche","Acabado para eventos nocturnos.",160],
+      ["Maquillaje de fiesta","Maquillaje social para celebraciones.",180],
+      ["Maquillaje de novia","Servicio con evaluación previa.",300],
+      ["Maquillaje de quinceañera","Estilo para ocasión especial.",250],
+      ["Maquillaje de ojos","Enfoque en el maquillaje de ojos.",70],
+      ["Prueba de maquillaje","Prueba y selección de estilo.",100]
+    ]
+  },
+  {
+    id:"tratamientos", name:"Tratamientos capilares",
+    desc:"Cuidado, nutrición y reparación del cabello",
+    items:[
+      ["Hidratación","Tratamiento hidratante básico.",80],
+      ["Nutrición capilar","Aporte de nutrición al cabello.",100],
+      ["Baño de crema","Aplicación de crema de tratamiento.",60],
+      ["Ampolla capilar","Tratamiento según necesidad.",50],
+      ["Keratina","Aplicación según largo y evaluación.",250],
+      ["Botox capilar","Tratamiento cosmético capilar.",220],
+      ["Reparación intensiva","Cuidado para cabello sensibilizado.",150],
+      ["Lavado y brushing","Lavado con secado y acabado.",55]
+    ]
+  },
+  {
+    id:"cejas", name:"Cejas y pestañas", desc:"Diseño y definición de la mirada",
+    items:[
+      ["Perfilado de cejas","Diseño y limpieza de cejas.",30],
+      ["Diseño de cejas","Diseño adaptado al rostro.",45],
+      ["Tinte de cejas","Realce temporal del tono.",40],
+      ["Laminado de cejas","Peinado y fijación de cejas.",100],
+      ["Lifting de pestañas","Curvatura de pestañas naturales.",120],
+      ["Tinte de pestañas","Realce del color de pestañas.",50],
+      ["Pestañas por grupo","Aplicación temporal por grupos.",70],
+      ["Diseño cejas + perfilado","Diseño y perfilado combinado.",60]
+    ]
+  }
+];
+
+const photos = [
+  "photo-1560066984-138dadb4c035",
+  "photo-1522337360788-8b13dee7a37e",
+  "photo-1489987707025-afc232f7ea0f",
+  "photo-1521590832167-7bcbdaa6381f",
+  "photo-1595476108010-b4d1f102b1b1",
+  "photo-1512496015851-a90fb38ba796",
+  "photo-1516975080664-ed2fc6a32937",
+  "photo-1524250502761-1ac6f2e30d43",
+  "photo-1487412720507-e7ab37603c6f",
+  "photo-1517841905240-472988babdf9",
+  "photo-1524504388940-b1c1722653e1",
+  "photo-1600948836101-f9ffda59d250"
+];
+
+// Fotografías agrupadas por tipo de servicio para que cada tarjeta muestre una imagen relacionada.
+const categoryPhotos = {
+  cortes: [
+    "images.jpg", "images (1).jpg",
+    "images (2).jpg", "images (3).jpg",
+    "images (4).jpg", "images (5).jpg",
+    "images (6).jpg", "images (7).jpg"
+  ],
+  tintes: [
+    "images (8).jpg", "images (9).jpg",
+    "images (10).jpg", "images (11).jpg",
+    "images (12).jpg", "images (13).jpg",
+    "images (14).jpg", "images (15).jpg"
+  ],
+  peinados: [
+    "images (16).jpg", "images (17).jpg",
+    "images (18).jpg", "images (19).jpg",
+    "images (20).jpg", "images (21).jpg",
+    "images (22e).jpg", "images (23e).jpg"
+  ],
+  manicure: [
+    "imagen (33e).jpg", "images (34e).jpg",
+    "images (35e).jpg", "images (36e).jpg",
+    "images (37e).jpg", "images (38e).jpg",
+    "images (39e).jpg", "images (35e).jpg"
+  ],
+  pedicure: [
+    "images (25e).jpg", "images (26e).jpg",
+    "images (27e).jpg", "images (28e).jpg",
+    "images (29e).jpg", "images (30e).jpg",
+    "images (31e).jpg", "images (32e).jpg"
+  ],
+  maquillaje: [
+    "imagen(40e).jpg", "images (41e).jpg",
+    "images (42e).jpg", "images (43e).jpg",
+    "images (44e).jpg", "images (45e).jpg",
+    "images (46e).jpg", "images (47e).jpg"
+  ],
+  tratamientos: [
+    "images (49e).jpg", "images (50e).jpg",
+    "images (51e).jpg", "images (52e).jpg",
+    "images (53e).jpg", "images (54e).jpg",
+    "images (55e).jpg", "images (56e).jpg"
+  ],
+  cejas: [
+    "images (57e).jpg", "images (58e).jpg",
+    "images (59e).jpg", "images (60e).jpg",
+    "images (61e).jpg", "images (62e).jpg",
+    "images (63e).jpg", "images (64e).jpg"
+  ]
+};
+
+function image(id) {
+  return `https://images.unsplash.com/${id}?auto=format&fit=crop&w=650&q=85`;
+}
+
+const catalog = document.getElementById("serviceCatalog");
+const categoryNav = document.getElementById("categoryNav");
+const serviceSelect = document.getElementById("serviceSelect");
+let imageIndex = 0;
+
+categories.forEach(category => {
+  const link = document.createElement("a");
+  link.href = "#" + category.id;
+  link.textContent = category.name;
+  categoryNav.appendChild(link);
+
+  const section = document.createElement("div");
+  section.className = "service-category";
+  section.id = category.id;
+
+  section.innerHTML = `
+    <div class="category-title">
+      <h3>${category.name}</h3>
+      <p>${category.desc} · 8 opciones</p>
+    </div>
+    <div class="cards"></div>
+  `;
+
+  const cards = section.querySelector(".cards");
+
+  category.items.forEach((item, itemIndex) => {
+    const categoryImages = categoryPhotos[category.id] || photos;
+    const photo = categoryImages[itemIndex % categoryImages.length];
+    imageIndex++;
+
+    const card = document.createElement("article");
+    card.className = "service-card";
+
+    card.innerHTML = `
+      <img src="${photo}" alt="${item[0]}" loading="lazy">
+      <div class="service-info">
+        <h4>${item[0]}</h4>
+        <p>${item[1]}</p>
+        <div class="card-bottom">
+          <span class="price">Bs ${item[2]}</span>
+          <button class="book-small" type="button">RESERVAR</button>
+        </div>
+      </div>
+    `;
+
+    card.querySelector("button").addEventListener("click", () => {
+      serviceSelect.value = item[0] + " — " + category.name;
+      showPage("reservas");
+    });
+
+    cards.appendChild(card);
+
+    const option = document.createElement("option");
+    option.value = item[0] + " — " + category.name;
+    option.textContent =
+      item[0] + " — " + category.name + " (Bs " + item[2] + ")";
+    serviceSelect.appendChild(option);
+  });
+
+  catalog.appendChild(section);
+});
+
+const gallery = document.getElementById("galleryGrid");
+
+// La galería reutiliza fotografías locales que también aparecen en Servicios.
+const galleryPhotos = [
+  categoryPhotos.cortes[0],
+  categoryPhotos.tintes[0],
+  categoryPhotos.peinados[0],
+  categoryPhotos.manicure[1],
+  categoryPhotos.pedicure[0],
+  categoryPhotos.maquillaje[1],
+  categoryPhotos.tratamientos[0],
+  categoryPhotos.cejas[0]
+];
+
+galleryPhotos.forEach((photo,index) => {
+  const img = document.createElement("img");
+  img.src = photo;
+  img.alt = "Trabajo y servicio de belleza " + (index + 1);
+  img.loading = "lazy";
+  gallery.appendChild(img);
+});
+
+// Muestra automáticamente la fecha del día en la promoción.
+const promoDate = document.getElementById("promoTodayDate");
+if (promoDate) {
+  promoDate.textContent = new Date().toLocaleDateString("es-BO", {
+    day: "numeric", month: "long", year: "numeric"
+  });
+}
+
+document.getElementById("year").textContent = new Date().getFullYear();
+
+function showPage(id) {
+  const pages = [...document.querySelectorAll("main > section")];
+  const target = document.getElementById(id);
+
+  if (!target || !pages.includes(target)) return;
+
+  pages.forEach(page => {
+    page.classList.toggle("active-page", page === target);
+  });
+
+  document.querySelectorAll("[data-page]").forEach(link => {
+    if (link.dataset.page === id) {
+      link.setAttribute("aria-current", "page");
+    } else {
+      link.removeAttribute("aria-current");
+    }
+  });
+
+  history.pushState(null, "", "#" + id);
+  window.scrollTo({ top: 0, behavior: "auto" });
+}
+
+document.querySelectorAll("[data-page]").forEach(link => {
+  link.addEventListener("click", event => {
+    event.preventDefault();
+    showPage(link.dataset.page);
+  });
+});
+
+window.addEventListener("popstate", () => {
+  const id = location.hash.slice(1) || "inicio";
+  showPage(id);
+});
+
+const validPages = [
+  "inicio","servicios","promociones",
+  "galeria","nosotros","reservas","contacto"
+];
+
+const initialPage = location.hash.slice(1);
+showPage(validPages.includes(initialPage) ? initialPage : "inicio");
+
+// Número de WhatsApp del salón en formato internacional de Bolivia.
+const salonWhatsApp = "59162791372";
+
+// El horario que se muestra en el formulario es de 09:00 a 18:00.
+// Esta página envía solicitudes por WhatsApp; la confirmación final la hace el salón.
+document.getElementById("bookingForm").addEventListener("submit", event => {
+  event.preventDefault();
+
+  const name = document.getElementById("clientName").value.trim();
+  const phone = document.getElementById("clientPhone").value.trim();
+  const service = serviceSelect.value;
+  const date = document.getElementById("date").value;
+  const time = document.getElementById("time").value;
+  const extra = document.getElementById("extra").value.trim();
+
+  if (!name || !phone || !service || !date || !time) {
+    alert("Completa todos los campos obligatorios para solicitar tu cita.");
+    return;
+  }
+
+  const selectedDate = new Date(date + "T00:00:00");
+  const day = selectedDate.getDay();
+  if (day === 0) {
+    alert("El horario publicado es de lunes a sábado. Elige otro día o consulta por WhatsApp.");
+    return;
+  }
+
+  const message =
+    "Hola, BEAUTY CENTER ADRIANA. Deseo consultar disponibilidad para una reserva.%0A" +
+    "Nombre: " + encodeURIComponent(name) + "%0A" +
+    "Teléfono del cliente: " + encodeURIComponent(phone) + "%0A" +
+    "Servicio: " + encodeURIComponent(service) + "%0A" +
+    "Fecha solicitada: " + encodeURIComponent(date) + "%0A" +
+    "Hora solicitada: " + encodeURIComponent(time) + "%0A" +
+    "Observaciones: " + encodeURIComponent(extra || "Ninguna") + "%0A%0A" +
+    encodeURIComponent("Por favor, confírmame si el horario está libre o si ya está reservado.");
+
+  alert("Se abrirá WhatsApp con tu solicitud. Pulsa ENVIAR para que el salón la reciba. La cita todavía no está confirmada hasta que te respondamos.");
+  window.open("https://wa.me/" + salonWhatsApp + "?text=" + message, "_blank", "noopener");
+});
+
+document.getElementById("date").min =
+  new Date().toISOString().split("T")[0];
+</script>
+
+</body>
+</html>
